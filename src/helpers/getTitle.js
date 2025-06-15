@@ -16,8 +16,8 @@ export default async function getTitle(id) {
     contentType: props.aboveTheFoldData.titleType.id,
     contentRating: props.aboveTheFoldData?.certificate?.rating ?? "N/A",
     isSeries: props.aboveTheFoldData.titleType.isSeries,
-    productionStatus: props.aboveTheFoldData.productionStatus.currentProductionStage.id,
-    isReleased: props.aboveTheFoldData.productionStatus.currentProductionStage.id === "released",
+    productionStatus: props.aboveTheFoldData?.productionStatus?.currentProductionStage?.id ?? "N/A",
+    isReleased: props.aboveTheFoldData?.productionStatus?.currentProductionStage?.id === "released",
     title: props.aboveTheFoldData.titleText.text,
     image: props.aboveTheFoldData.primaryImage.url,
     images: props.mainColumnData.titleMainImages.edges
