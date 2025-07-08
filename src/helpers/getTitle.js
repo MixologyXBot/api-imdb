@@ -19,9 +19,9 @@ export default async function getTitle(id) {
     productionStatus: props.aboveTheFoldData?.productionStatus?.currentProductionStage?.id ?? "N/A",
     isReleased: props.aboveTheFoldData?.productionStatus?.currentProductionStage?.id === "released",
     title: props.aboveTheFoldData.titleText.text,
-    image: props.aboveTheFoldData?.primaryImage?.url ?? "",
-    images: (props.mainColumnData?.titleMainImages?.edges ?? [])
-      .filter((e) => e?.__typename === "ImageEdge" && e?.node?.url)
+    image: props.aboveTheFoldData.primaryImage?.url ?? "",
+    images: props.mainColumnData.titleMainImages.edges
+      .filter((e) => e.__typename === "ImageEdge")
       .map((e) => e.node.url),
     plot: props.aboveTheFoldData.plot?.plotText?.plainText ?? "",
     runtime: props.aboveTheFoldData.runtime?.displayableProperty?.value?.plainText ?? "",
