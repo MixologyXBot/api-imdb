@@ -33,7 +33,7 @@ export async function getSeason({ id, seasonId }) {
       title: e.titleText,
       image: e.image?.url ?? "",
       image_large: e.image?.url ?? "",
-      image_caption: e.image.caption,
+      image_caption: e.image?.caption ?? "",
       plot: e.plot,
       publishedDate: new Date(e.releaseDate.year, e.releaseDate.month - 1, e.releaseDate.day).toISOString(),
       rating: {
